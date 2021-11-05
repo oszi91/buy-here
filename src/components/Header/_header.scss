@@ -1,0 +1,55 @@
+.header {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	color: $color1;
+
+	background: $color2;
+	box-shadow: $box-shadow;
+	z-index: 9999;
+}
+
+.headerContainer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 70px;
+}
+
+.cart {
+	font-size: 1.7rem;
+	position: relative;
+
+	&__placeholder {
+		position: absolute;
+		right: -25%;
+		top: -25%;
+		height: 20px;
+		width: 20px;
+		background-color: $color3;
+		border-radius: 50%;
+	}
+
+	&__quantity {
+		position: absolute;
+		top: -25%;
+		right: -9%;
+		font-size: 1.1rem;
+		color: $color2;
+		font-weight: 700;
+	}
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+
+	&__txt {
+		font-size: 1.7rem;
+		font-family: $font-logo;
+
+		&--color {
+			color: $color3;
+		}
+	}
+}

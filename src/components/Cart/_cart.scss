@@ -1,0 +1,37 @@
+.cartContainer{
+		margin-top: 70px;
+		min-height: 70vh;
+		width: 100%;
+}
+
+.cartHeader{
+	font-size: 3rem;
+	font-weight: 700;
+	text-align: center;
+	margin-top: 100px;
+	color: $color3;
+}
+
+.cartList {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+	margin-top: 30px;
+	background-color: $color1;
+	min-height: 30vh;
+
+	&__item {
+		box-shadow: 2px 7px 20px 3px lighten($color: $color2, $amount: 55%);
+		border-radius: $border-radius;
+		padding: 15px;
+		width: 85%;
+		margin: 15px 0;
+
+		@include phone {
+			width: 100%;
+		}
+	}
+}
+
