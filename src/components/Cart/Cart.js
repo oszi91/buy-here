@@ -1,17 +1,25 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import OneCart from './subcomponents/OneCart/OneCart';
 
 const Cart = () => {
+	const cartData = useSelector(state => state.cart.cartData);
+
+	console.log(cartData)
+
 	return (
 		<div className="container">
 			<div className="cartContainer">
 				<h1 className="cartHeader">YOUR CART</h1>
 				<ul className="cartList">
-					<OneCart
-						img={'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg'}
-						name={'Plecak Janette'}
-						price={'150'}
-					/>
+					{cartData.map(product => {
+						return (
+							<OneCart
+								key={product.id}
+								{...product}
+							/>
+						);
+					})}
 				</ul>
 			</div>
 		</div>

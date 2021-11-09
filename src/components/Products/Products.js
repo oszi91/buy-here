@@ -1,17 +1,29 @@
-import React from 'react';
-import Cart from '../Cart/Cart';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import OneProduct from './subcomponents/OneProduct/OneProduct';
+import { getCartData } from './../../store/cart/cartActions';
+import Loading from '../Loading/Loading';
+import Messages from '../Messages/Messages';
 
 const Products = () => {
+	const dispatch = useDispatch();
+	const data = useSelector(state => state.cart.data);
+
+	useEffect(() => {
+		dispatch(getCartData());
+	}, [dispatch]);
+
 	return (
 		<div className="container">
 			<main className="productsContainer">
 				<ul className="productsList">
-					<OneProduct
-						img={'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg'}
-						name={'Plecak Janette'}
-						price={'150'}
-					/>
+					{data.length ? (
+						data.map(product => {
+							return <OneProduct key={product.id} {...product} />;
+						})
+					) : (
+						<Loading />
+					)}
 				</ul>
 			</main>
 		</div>

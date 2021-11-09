@@ -4,10 +4,14 @@
 @import 'settings/fonts';
 @import 'settings/base';
 
+@import '../components/Loading/loading';
+@import '../components/Messages/messages';
+
 @import '../components/Header/header';
 
 @import '../components/Products/products';
 @import '../components/Products/subcomponents/OneProduct/oneProduct';
+
 @import '../components/Cart/cart';
 @import '../components/Cart/subcomponents/OneCart/oneCart';
 
