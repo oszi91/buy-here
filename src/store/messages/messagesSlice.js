@@ -11,7 +11,10 @@ const messagesSlice = createSlice({
 		showMessage(state, action) {
             const {status, title} = action.payload;
             state.message = {status, title}
-        }
+        },
+		hideMessage(state){
+			state.message = null;
+		}
 	},
 });
 

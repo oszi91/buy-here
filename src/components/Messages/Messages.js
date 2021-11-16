@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 
 const Messages = () => {
 	const message = useSelector(state => state.message.message);
-
     const {status, title} = message;
 
     let classStatus;

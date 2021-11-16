@@ -1,17 +1,24 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { cartActions } from '../../../../store/cart/cartSlice';
+
+import {
+	addToCartWithMessage,
+	removeCartWithMessage,
+} from '../../../../store/cart/cartActions';
+
+import { cutTextIfToLong } from '../../../../helpers/cutTextIfToLong';
 
 const OneCart = ({ id, image, title, price, quantity }) => {
 	const dispatch = useDispatch();
 
 	const addToCartHandle = () => {
-		dispatch(cartActions.addToCart({ id }));
+		dispatch(addToCartWithMessage({id}));
+	};
+	const removeFromCartHandle = () => {
+		dispatch(removeCartWithMessage(id));
 	};
 
-	const removeFromCartHandle = () => {
-		dispatch(cartActions.removeFromCart(id));
-	};
+	const shorterName = cutTextIfToLong(title, 25);
 
 	return (
 		<li className="cartList__item">
@@ -19,7 +26,7 @@ const OneCart = ({ id, image, title, price, quantity }) => {
 				<div className="userCart__photo">
 					<img className="userCart__photo__img" src={image} />
 				</div>
-				<p className="userCart__name">{title}</p>
+				<p className="userCart__name">{shorterName}</p>
 				<div className="userCart__quantity">
 					<button
 						className="userCart__quantity__minus"

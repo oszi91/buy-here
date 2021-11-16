@@ -21,7 +21,25 @@
         box-shadow: $box-shadow-cart;
         position: relative;
         border-radius: $border-radius;
+		text-align: center;
+		background-color: $color1;
     }
 }
 
+.loadMore{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 50px 0;
+	
+
+	&__btn{
+		border-radius: $border-radius;
+		padding: 20px 25px;
+		background-color: $color3;
+		font-weight: 700;
+		font-size: 1.2rem;
+		color: $color2;
+	}
+}
 

@@ -1,31 +1,39 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import OneProduct from './subcomponents/OneProduct/OneProduct';
-import { getCartData } from './../../store/cart/cartActions';
+
+import { dataToFetch } from '../../store/data/dataActions';
+
 import Loading from '../Loading/Loading';
-import Messages from '../Messages/Messages';
+import LoadMoreBtn from './subcomponents/LoadMoreBtn/LoadMoreBtn';
+import OneProductOnList from './subcomponents/OneProductOnList/OneProductOnList';
 
 const Products = () => {
 	const dispatch = useDispatch();
-	const data = useSelector(state => state.cart.data);
 
-	useEffect(() => {
-		dispatch(getCartData());
-	}, [dispatch]);
+	const data = useSelector(state => state.data.data);
+	const loading = useSelector(state => state.data.loading);
+	const productsToFetch = useSelector(state => state.data.productsToFetch);
+
+	const showBtn = productsToFetch <= data.length;
+
+	const updateProducts = () => {
+		dispatch(dataToFetch(6));
+	};
 
 	return (
 		<div className="container">
 			<main className="productsContainer">
 				<ul className="productsList">
-					{data.length ? (
-						data.map(product => {
-							return <OneProduct key={product.id} {...product} />;
-						})
-					) : (
-						<Loading />
-					)}
+					{data.map(product => {
+						return <OneProductOnList key={product.id} {...product} />;
+					})}
+					{loading && <Loading />}
 				</ul>
 			</main>
+				<LoadMoreBtn
+				updateProducts={() => dispatch(updateProducts)}
+				showBtn={showBtn}
+			/>
 		</div>
 	);
 };

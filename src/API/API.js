@@ -1,0 +1,1 @@
+export const API_TOTAL_NUMBER_OF_ITEMS = 20;

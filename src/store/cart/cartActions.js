@@ -1,29 +1,32 @@
+import { cartActions } from '../cart/cartSlice';
 import { messagesActions } from '../messages/messagesSlice';
-import { cartActions } from './cartSlice';
 
-export const getCartData = () => {
-	return async dispatch => {
-		const getData = async () => {
-			const response = await fetch('https://fakestoreapi.com/products');
+export const addToCartWithMessage = productInfo => {
+	return dispatch => {
+		dispatch(cartActions.addToCart(productInfo));
+		dispatch(
+			messagesActions.showMessage({
+				status: 'success',
+				title: `Item was added to cart.`,
+			})
+		);
+		setTimeout(() => {
+			dispatch(messagesActions.hideMessage());
+		}, 500);
+	};
+};
 
-			if (!response.ok) {
-				throw new Error(`Can't fetch data!`);
-			}
-
-			const data = await response.json();
-			return data;
-		};
-
-		try {
-			const cartData = await getData();
-			dispatch(cartActions.fetchData(cartData));
-		} catch (error) {
-			dispatch(
-				messagesActions.showMessage({
-					status: 'error',
-					title: `Ups. We can't fetch data.`,
-				})
-			);
-		}
+export const removeCartWithMessage = id => {
+	return dispatch => {
+		dispatch(cartActions.removeFromCart(id));
+		dispatch(
+			messagesActions.showMessage({
+				status: 'success',
+				title: `Item was removed from cart.`,
+			})
+		);
+		setTimeout(() => {
+			dispatch(messagesActions.hideMessage());
+		}, 500);
 	};
 };
