@@ -3,7 +3,7 @@
 	justify-content: space-between;
 	align-items: center;
 	width: 100%;
-	height: 125px;
+	height: 50px;
 
 	@include phone {
 		height: auto;
@@ -11,23 +11,25 @@
 	}
 
 	&__photo {
+		min-width: 10%;
+		max-width: 10%;
 		&__img {
 			height: auto;
-			max-height: 150px;
-			max-width: 150px;
+			max-height: 100px;
+			max-width: 100px;
 			border-radius: $border-radius;
 			padding: 15px;
 
 			@include phone {
 				width: 100%;
 				max-width: none;
-				max-height: none;
+				max-height: 100px;
 			}
 		}
 	}
 
 	&__name {
-		font-size: 1.5rem;
+		font-size: 1rem;
 		min-width: 25%;
 		max-width: 25%;
 		line-height: 1.2;
@@ -37,50 +39,24 @@
 			max-height: none;
 			width: 100%;
 			text-align: center;
-			font-size: 1.2rem;
+			font-size: 1.1rem;
 			margin-top: 5px;
 		}
 
 		span {
 			margin-right: 7px;
 		}
-
-		&--model {
-			font-weight: 700;
-		}
-	}
-
-	&__price {
-		min-width: 100%;
-		font-size: 1.5rem;
-		display: flex;
-		align-items: center;
-
-		&__total {
-			font-weight: 600;
-			color: $color2;
-		}
-
-		&__oneItem {
-			margin-left: 15px;
-			font-size: 1rem;
-			color: $color2;
-		}
-
-		@include phone {
-			margin-top: 10px;
-		}
 	}
 
 	&__quantity {
 		display: flex;
 		border-radius: $border-radius;
-		font-size: 1.4rem;
+		font-size: 1.3rem;
 		overflow: hidden;
 		box-shadow: $box-shadow-cart;
 
 		@include phone {
-			margin: 0;
+			margin: 20px 0;
 		}
 
 		&__add,
@@ -89,14 +65,57 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			height: 22px;
-			width: 22px;
-			padding: 22px;
+			height: 20px;
+			width: 20px;
+			padding: 20px;
 		}
 
 		&__number {
-			border-right: 1px solid #e5e5e5;
-			border-left: 1px solid #e5e5e5;
+			border-right: 1px solid $color4;
+			border-left: 1px solid $color4;
+		}
+	}
+
+	
+	&__price {
+		font-size: 1.3rem;
+		display: flex;
+		align-items: center;
+
+		@include phone{
+			flex-direction: column;
+			margin-bottom: 15px;
+		}
+
+		&__total {
+			font-weight: 600;
+			color: $color2;
+
+			@include phone{
+				margin-bottom: 10px;
+			}
+		}
+
+		&__oneItem {
+			margin-left: 15px;
+			font-size: 1rem;
+			color: $color2;
+
+			@include phone{
+				margin-left: 0;
+			}
+		}
+
+	}
+
+	&__trash{
+		cursor: pointer;
+		font-size: 1.3rem;
+		color: $color2;
+
+		@include phone{
+			font-size: 1.5rem;
+			margin-bottom: 15px;
 		}
 	}
 }

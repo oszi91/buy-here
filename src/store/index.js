@@ -5,19 +5,21 @@ import { combineReducers } from 'redux';
 import { persistReducer } from 'redux-persist';
 
 import cart from './cart/cartSlice';
+import checkout from './checkout/checkoutSlice';
 import data from './data/dataSlice';
 import message from './messages/messagesSlice';
 
 const persistConfig = {
 	key: 'root',
 	storage,
-	whitelist: ['cart']
+	whitelist: ['cart', 'checkout'],
 };
 
 const reducers = combineReducers({
 	cart,
+	checkout,
 	message,
-	data
+	data,
 });
 
 const persistedReducer = persistReducer(persistConfig, reducers);

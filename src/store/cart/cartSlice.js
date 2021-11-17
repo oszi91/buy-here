@@ -24,12 +24,16 @@ const cartSlice = createSlice({
 			}
 		},
 		removeFromCart(state, action) {
-			state.cartQuantity--;
-
-			const id = action.payload;
+			const { id, removeCompletely } = action.payload;
 			const existingProduct = state.cartData.find(product => product.id === id);
 
-			if (existingProduct.quantity === 1) {
+			if (removeCompletely) {
+				state.cartQuantity = state.cartQuantity - existingProduct.quantity;
+			} else {
+				state.cartQuantity--;
+			}
+
+			if (existingProduct.quantity === 1 || removeCompletely) {
 				state.cartData = state.cartData.filter(product => product.id !== id);
 			} else {
 				existingProduct.quantity--;
@@ -37,8 +41,6 @@ const cartSlice = createSlice({
 		},
 	},
 });
-
-
 
 export const cartActions = cartSlice.actions;
 

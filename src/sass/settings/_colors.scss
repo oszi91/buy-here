@@ -1,10 +1,12 @@
 $color1: #ffffff;
 $color2: #455e5b;
 $color3: #83f4ff;
+$color4: #e5e5e5;
+$color5: #8d1111;
 
 $background: rgba(131, 244, 255, 0.5);
 
-$box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+$box-shadow: 0px 2px 5px 3px rgba(0, 0, 0, 0.1);
 $box-shadow-cart: 2px 7px 20px 3px lighten($color: $color2, $amount: 55%);
 
 $footer-bcg: linear-gradient(to bottom, #e2e2e2, #455e5b);
