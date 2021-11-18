@@ -123,17 +123,29 @@
 	border-radius: $border-radius;
 	box-shadow: $box-shadow-cart;
 	background-color: $color1;
+	text-align: center;
+
+	@include phone {
+		margin-top: 380px;
+		top: 0;
+		height: 100vh;
+		position: fixed;
+	}
 
 	&__header {
 		font-size: 3rem;
 		font-weight: 600;
 		margin-bottom: 30px;
+
+		@include phone {
+			font-size: 2rem;
+		}
 	}
 
 	&__redirect {
 		font-size: 1.5rem;
 
-		&__sec{
+		&__sec {
 			font-weight: 700;
 		}
 	}

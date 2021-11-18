@@ -27,7 +27,7 @@ const Input = ({
 							userData:
 								type === 'tel'
 									? parseFloat(e.currentTarget.value, 10) || ''
-									: e.currentTarget.value.toUpperCase(),
+									: e.currentTarget.value,
 						})
 					)
 				}
