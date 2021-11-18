@@ -7,12 +7,13 @@ import { persistReducer } from 'redux-persist';
 import cart from './cart/cartSlice';
 import checkout from './checkout/checkoutSlice';
 import data from './data/dataSlice';
+import favorites from './favorites/favoritesSlice';
 import message from './messages/messagesSlice';
 
 const persistConfig = {
 	key: 'root',
 	storage,
-	whitelist: ['cart', 'checkout'],
+	whitelist: ['cart', 'favorites'],
 };
 
 const reducers = combineReducers({
@@ -20,6 +21,7 @@ const reducers = combineReducers({
 	checkout,
 	message,
 	data,
+	favorites,
 });
 
 const persistedReducer = persistReducer(persistConfig, reducers);

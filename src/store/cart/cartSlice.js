@@ -39,6 +39,9 @@ const cartSlice = createSlice({
 				existingProduct.quantity--;
 			}
 		},
+		reset() {
+			return initialState;
+		},
 	},
 });
 

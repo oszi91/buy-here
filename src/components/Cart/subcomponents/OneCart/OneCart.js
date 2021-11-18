@@ -28,7 +28,7 @@ const OneCart = ({ id, image, title, price, quantity }) => {
 		<li className="cartList__item">
 			<div className="userCart">
 				<div className="userCart__photo">
-					<img className="userCart__photo__img" src={image} />
+					<img className="userCart__photo__img" src={image} alt={title} />
 				</div>
 				<p className="userCart__name">{shorterName}</p>
 				<div className="userCart__quantity">

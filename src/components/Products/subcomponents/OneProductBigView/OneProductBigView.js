@@ -10,6 +10,8 @@ import CheckAlsoProducts from '../CheckAlsoProducts/CheckAlsoProducts';
 import Loading from '../../../Loading/Loading';
 import NextPrevProduct from '../NextPrevProduct/NextPrevProduct';
 import OneProductView from '../OneProductView/OneProductView';
+import AddToFav from '../AddtoFav/AddToFav';
+import { favoritesActions } from '../../../../store/favorites/favoritesSlice';
 
 const OneProductBigView = () => {
 	const { id } = useParams();
@@ -30,6 +32,9 @@ const OneProductBigView = () => {
 	const addToCartHandle = () => {
 		dispatch(addToCartWithMessage(productDataToCart));
 	};
+	const addOrDeleteFavHandle = () => {
+		dispatch(favoritesActions.addOrDelete(productDataToCart));
+	};
 
 	return (
 		<>
@@ -44,7 +49,8 @@ const OneProductBigView = () => {
 								image={image}
 							/>
 							<AddToCartButton addToCartHandle={addToCartHandle} />
-							<NextPrevProduct id={idNum}/>
+							<AddToFav addOrDelete={addOrDeleteFavHandle} id={idNum} />
+							<NextPrevProduct id={idNum} />
 						</>
 					)}
 					{loading && <Loading />}

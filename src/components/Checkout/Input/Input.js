@@ -8,7 +8,7 @@ const Input = ({
 	type,
 	id,
 	placeholder,
-	err,
+	error,
 	state,
 }) => {
 	const dispatch = useDispatch();
@@ -37,11 +37,11 @@ const Input = ({
 				type={type}
 				placeholder={placeholder}
 			/>
-			{err && <p className="checkout__inputsContainer__err">{err}</p>}
+			{error && <p className="checkout__inputsContainer__err">{error}</p>}
 		</div>
 	);
 };
 
-Input.defaultProps = { type: 'text', dispatchType: 'FIELD' };
+Input.defaultProps = { type: 'text' };
 
 export default Input;

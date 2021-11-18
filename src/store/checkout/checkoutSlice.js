@@ -1,14 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-        email: '',
-        name: '',
-        surname: '',
-        phoneNumber: '',
-        street: '',
-        streetNumber: '',
-        postCode: '',
-        city: '',
+	userInfo: {
+		email: '',
+		name: '',
+		surname: '',
+		phoneNumber: '',
+		street: '',
+		streetNumber: '',
+		postCode: '',
+		city: '',
+	},
+	errors: {},
 };
 
 const checkoutSlice = createSlice({
@@ -16,8 +19,14 @@ const checkoutSlice = createSlice({
 	initialState,
 	reducers: {
 		checkoutHandle(state, action) {
-            state[action.payload.fieldName] = action.payload.userData
-        },
+			state.userInfo[action.payload.fieldName] = action.payload.userData;
+		},
+		checkoutErrors(state, action) {
+			state.errors = action.payload;
+		},
+		reset(){
+			return initialState;
+		}
 	},
 });
 

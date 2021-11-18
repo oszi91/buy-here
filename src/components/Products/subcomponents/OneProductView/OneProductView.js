@@ -4,7 +4,7 @@ const OneProductView = ({image, title, price, description}) => {
 	return (
 		<div className="product">
 			<div className="product__photo">
-				<img className="product__photo__img" src={image} />
+				<img className="product__photo__img" src={image} alt={title} />
 			</div>
 			<h2 className="product__name">{title}</h2>
 			{description && <h3 className="product__desc">{description}</h3>}

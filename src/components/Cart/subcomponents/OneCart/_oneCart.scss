@@ -13,6 +13,10 @@
 	&__photo {
 		min-width: 10%;
 		max-width: 10%;
+		@include phone{
+			min-width: none;
+			max-width: none;
+		}
 		&__img {
 			height: auto;
 			max-height: 100px;

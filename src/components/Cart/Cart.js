@@ -32,7 +32,7 @@ const Cart = () => {
 						</div>
 					</>
 				) : (
-					<div className="cartContainer__empty">Ups. It's empty.</div>
+					<div className="cartContainer__empty">Ups. It's empty. <i className="far fa-frown"></i></div>
 				)}
 			</div>
 		</div>

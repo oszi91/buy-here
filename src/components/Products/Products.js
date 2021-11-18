@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { dataToFetch } from '../../store/data/dataActions';
 
-import Loading from '../Loading/Loading';
+import ListOfProducts from './subcomponents/ListOfProducts/ListOfProducts';
 import LoadMoreBtn from './subcomponents/LoadMoreBtn/LoadMoreBtn';
-import OneProductOnList from './subcomponents/OneProductOnList/OneProductOnList';
+
 
 const Products = () => {
 	const dispatch = useDispatch();
@@ -22,15 +22,8 @@ const Products = () => {
 
 	return (
 		<div className="container">
-			<main className="productsContainer">
-				<ul className="productsList">
-					{data.map(product => {
-						return <OneProductOnList key={product.id} {...product} />;
-					})}
-					{loading && <Loading />}
-				</ul>
-			</main>
-				<LoadMoreBtn
+			<ListOfProducts data={data} loading={loading} />
+			<LoadMoreBtn
 				updateProducts={() => dispatch(updateProducts)}
 				showBtn={showBtn}
 			/>

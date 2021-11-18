@@ -38,6 +38,7 @@
 		border-radius: $border-radius;
 		box-shadow: $box-shadow-cart;
 		margin: 50px 0;
+		position: relative;
 
 		@include phone {
 			width: 100%;
@@ -99,10 +100,41 @@
 		}
 
 		&__err {
+			width: 250px;
 			font-weight: 700;
 			color: $color5;
 			font-size: 0.7rem;
 			margin-top: 4px;
+		}
+	}
+}
+
+.confirmation {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	border-radius: $border-radius;
+	box-shadow: $box-shadow-cart;
+	background-color: $color1;
+
+	&__header {
+		font-size: 3rem;
+		font-weight: 600;
+		margin-bottom: 30px;
+	}
+
+	&__redirect {
+		font-size: 1.5rem;
+
+		&__sec{
+			font-weight: 700;
 		}
 	}
 }

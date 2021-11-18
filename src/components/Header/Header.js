@@ -7,11 +7,19 @@ import Messages from '../Messages/Messages';
 const Header = () => {
 	const quantity = useSelector(state => state.cart.cartQuantity);
 	const message = useSelector(state => state.message.message);
+	const favorites = useSelector(state => state.favorites.favorites);
 
 	const areProductsInCart = quantity !== 0 && (
 		<>
-			<p className="cart__placeholder"></p>
-			<p className="cart__quantity">{quantity}</p>
+			<p className="headerItem__placeholder"></p>
+			<p className="headerItem__quantity">{quantity}</p>
+		</>
+	);
+
+	const areFavoritesOnList = favorites.length !== 0 && (
+		<>
+			<p className="headerItem__placeholder"></p>
+			<p className="headerItem__quantity">{favorites.length}</p>
 		</>
 	);
 
@@ -25,11 +33,19 @@ const Header = () => {
 							<span className="logo__txt--color">Here</span>!
 						</Link>
 					</div>
-					<div className="cart">
-						<Link to="/cart">
-							<i className="fas fa-shopping-cart"></i>
-							{areProductsInCart}
-						</Link>
+					<div className="headerContainer">
+						<div className="headerItem">
+							<Link className="headerItem__link" to="/favorites">
+								<i className="fas fa-star"></i>
+								{areFavoritesOnList}
+							</Link>
+						</div>
+						<div className="headerItem">
+							<Link className="headerItem__link" to="/cart">
+								<i className="fas fa-shopping-cart"></i>
+								{areProductsInCart}
+							</Link>
+						</div>
 					</div>
 				</div>
 			</div>
