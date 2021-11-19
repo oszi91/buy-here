@@ -3,6 +3,7 @@
 
 ## Description:
 Find a product that interests you and add it to your shopping cart or favorites. All the data is collected locally, if you refresh the page it will remain unchanged. In the shopping cart you will find a summary of your order and you can also edit it. Once you have made a decision, fill in the form with your data correctly and enjoy your shopping.
+All data comes from [FakeStoreApi](https://fakestoreapi.com/).
 
 ## buy-here - Preview
 ![](ghPreview/1.png)
