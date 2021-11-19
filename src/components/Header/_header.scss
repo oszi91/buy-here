@@ -3,7 +3,6 @@
 	top: 0;
 	width: 100%;
 	color: $color1;
-
 	background: $color2;
 	box-shadow: $box-shadow;
 	z-index: 9999;
@@ -23,12 +22,18 @@
 	align-items: center;
 	justify-content: center;
 
+
 	&__link {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		transition: .2s;
 		&:first-child {
 			margin-right: 25px;
+		}
+
+		&:hover{
+			opacity: 0.8;
 		}
 	}
 
@@ -50,6 +55,7 @@
 .logo {
 	display: flex;
 	align-items: center;
+	transition: .2s;
 
 	&__txt {
 		font-size: 1.7rem;
@@ -58,5 +64,9 @@
 		&--color {
 			color: $color3;
 		}
+	}
+
+	&:hover{
+		opacity: 0.8;
 	}
 }

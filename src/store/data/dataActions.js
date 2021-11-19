@@ -1,5 +1,6 @@
 import { dataActions } from './dataSlice';
 import { messagesActions } from '../messages/messagesSlice';
+import { API_OPTIONS } from '../../API/API';
 
 export const dataToFetch = updateQuantityProducts => {
 	return async (dispatch, getState) => {
@@ -9,9 +10,7 @@ export const dataToFetch = updateQuantityProducts => {
 
 		const getData = async () => {
 			const productsToFetch = getState().data.productsToFetch;
-			const response = await fetch(
-				`https://fakestoreapi.com/products?limit=${productsToFetch}`
-			);
+			const response = await fetch(`${API_OPTIONS.limit}=${productsToFetch}`);
 
 			if (!response.ok) {
 				throw new Error(`Can't fetch data!`);
@@ -39,7 +38,7 @@ export const dataToFetch = updateQuantityProducts => {
 export const fetchSingleProduct = id => {
 	return async dispatch => {
 		const getProduct = async () => {
-			const response = await fetch(`https://fakestoreapi.com/products/${id}`);
+			const response = await fetch(`${API_OPTIONS.product}/${id}`);
 
 			if (!response.ok) {
 				throw new Error(`Can't fetch data!`);

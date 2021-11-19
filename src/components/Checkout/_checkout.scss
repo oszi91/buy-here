@@ -26,6 +26,11 @@
 		font-weight: 700;
 		font-size: 1.4rem;
 		color: $color2;
+		transition: 0.2s;
+
+		&:hover {
+			opacity: 0.8;
+		}
 
 		&__price {
 			font-size: 1rem;
@@ -44,7 +49,7 @@
 			width: 100%;
 		}
 
-		@include tablet{
+		@include tablet {
 			width: 100%;
 		}
 
