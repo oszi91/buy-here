@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/buy-here/static/css/main.1e24e853.chunk.css",
+    "main.css": "/buy-here/static/css/main.b19c3070.chunk.css",
     "main.js": "/buy-here/static/js/main.415f0b30.chunk.js",
     "main.js.map": "/buy-here/static/js/main.415f0b30.chunk.js.map",
     "runtime-main.js": "/buy-here/static/js/runtime-main.0da644ae.js",
@@ -8,13 +8,13 @@
     "static/js/2.3e6033f6.chunk.js": "/buy-here/static/js/2.3e6033f6.chunk.js",
     "static/js/2.3e6033f6.chunk.js.map": "/buy-here/static/js/2.3e6033f6.chunk.js.map",
     "index.html": "/buy-here/index.html",
-    "static/css/main.1e24e853.chunk.css.map": "/buy-here/static/css/main.1e24e853.chunk.css.map",
+    "static/css/main.b19c3070.chunk.css.map": "/buy-here/static/css/main.b19c3070.chunk.css.map",
     "static/js/2.3e6033f6.chunk.js.LICENSE.txt": "/buy-here/static/js/2.3e6033f6.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.0da644ae.js",
     "static/js/2.3e6033f6.chunk.js",
-    "static/css/main.1e24e853.chunk.css",
+    "static/css/main.b19c3070.chunk.css",
     "static/js/main.415f0b30.chunk.js"
   ]
 }
