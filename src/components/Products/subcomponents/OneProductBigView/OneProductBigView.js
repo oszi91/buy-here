@@ -3,15 +3,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 import { addToCartWithMessage } from '../../../../store/cart/cartActions';
+import { favoritesActions } from '../../../../store/favorites/favoritesSlice';
 import { fetchSingleProduct } from '../../../../store/data/dataActions';
 
-import AddToCartButton from '../AddToCartButton/AddToCartButton';
+import AddToCartButton from '../../../Buttons/AddToCartButton/AddToCartButton';
+import AddToFav from '../../../Buttons/AddtoFav/AddToFav';
 import CheckAlsoProducts from '../CheckAlsoProducts/CheckAlsoProducts';
 import Loading from '../../../Loading/Loading';
-import NextPrevProduct from '../NextPrevProduct/NextPrevProduct';
+import NextPrevProduct from '../../../Buttons/NextPrevProduct/NextPrevProduct';
 import OneProductView from '../OneProductView/OneProductView';
-import AddToFav from '../AddtoFav/AddToFav';
-import { favoritesActions } from '../../../../store/favorites/favoritesSlice';
 
 const OneProductBigView = () => {
 	const { id } = useParams();

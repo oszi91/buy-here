@@ -10,6 +10,7 @@
 		position: relative;
 		max-width: 100%;
 		width: auto;
+		
 		&__img {
 			height: 225px;
 			width: auto;
@@ -41,49 +42,6 @@
 	}
 }
 
-.productBtn {
-	margin-top: 15px;
-	font-size: 1.3rem;
-	color: $color2;
-
-	@include phone {
-		font-size: 1.5rem;
-	}
-}
-
-.addToFav {
-	margin-top: 7px;
-	font-size: 1.5rem;
-	color: $color3;
-}
-
-.favoritesEmptyContainer {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	min-height: 100vh;
-	width: 100%;
-}
-
-.favoritesEmpty {
-	text-align: center;
-	font-size: 2rem;
-	font-weight: 600;
-	color: $color2;
-
-	@include phone {
-		font-size: 1.3rem;
-		line-height: 1.1;
-	}
-
-	i {
-		margin-left: 5px;
-		@include phone {
-			margin: 0;
-		}
-	}
-}
-
 .oneProductBigConatainer {
 	display: flex;
 	justify-content: center;
@@ -108,7 +66,6 @@
 		.product {
 			&__photo {
 				height: 40vh;
-				// margin-bottom: 20px;
 			}
 		}
 
@@ -123,29 +80,5 @@
 
 	.addToFav {
 		font-size: 1.7rem;
-	}
-}
-
-.navBtn {
-	position: absolute;
-	top: 50%;
-	transform: translate(0, -50%);
-	font-size: 2rem;
-
-	@include phone {
-		top: 104%;
-		font-size: 1.5rem;
-		margin-top: 25px;
-		box-shadow: $box-shadow-cart;
-		padding: 10px;
-		border-radius: $border-radius;
-	}
-
-	&__next {
-		right: 2%;
-	}
-
-	&__prev {
-		left: 2%;
 	}
 }

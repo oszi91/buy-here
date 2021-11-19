@@ -4,8 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { dataToFetch } from '../../store/data/dataActions';
 
 import ListOfProducts from './subcomponents/ListOfProducts/ListOfProducts';
-import LoadMoreBtn from './subcomponents/LoadMoreBtn/LoadMoreBtn';
-
+import LoadMoreBtn from '../Buttons/LoadMoreBtn/LoadMoreBtn';
 
 const Products = () => {
 	const dispatch = useDispatch();

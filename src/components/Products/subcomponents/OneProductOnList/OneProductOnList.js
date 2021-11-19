@@ -6,8 +6,8 @@ import { cutTextIfToLong } from '../../../../helpers/cutTextIfToLong';
 import { addToCartWithMessage } from '../../../../store/cart/cartActions';
 import { favoritesActions } from '../../../../store/favorites/favoritesSlice';
 
-import AddToCartButton from '../AddToCartButton/AddToCartButton';
-import AddToFav from '../AddtoFav/AddToFav';
+import AddToCartButton from '../../../Buttons/AddToCartButton/AddToCartButton';
+import AddToFav from '../../../Buttons/AddtoFav/AddToFav';
 import OneProductView from '../OneProductView/OneProductView';
 
 const OneProductOnList = ({ id, image, title, price }) => {

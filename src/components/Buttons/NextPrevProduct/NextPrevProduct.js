@@ -2,9 +2,9 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { fetchSingleProduct } from '../../../../store/data/dataActions';
+import { API_TOTAL_NUMBER_OF_ITEMS } from '../../../API/API';
 
-import { API_TOTAL_NUMBER_OF_ITEMS } from '../../../../API/API';
+import { fetchSingleProduct } from '../../../store/data/dataActions';
 
 const NextPrevProduct = ({ id }) => {
     const dispatch = useDispatch();

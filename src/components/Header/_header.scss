@@ -19,33 +19,32 @@
 .headerItem {
 	font-size: 1.7rem;
 	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
 	&__link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		&:first-child {
 			margin-right: 25px;
 		}
 	}
 
-	&__placeholder {
+	&__circle {
 		position: absolute;
-		right: -25%;
+		right: 15%;
 		top: -25%;
-		height: 20px;
+		color: $color2;
+		font-size: 0.8rem;
 		width: 20px;
-		background-color: $color3;
+		line-height: 20px;
 		border-radius: 50%;
-		margin-right: 25px;
+		text-align: center;
+		background-color: $color3;
 	}
 
-	&__quantity {
-		position: absolute;
-		top: -25%;
-		right: -15%;
-		font-size: 1.1rem;
-		color: $color2;
-		font-weight: 700;
-		margin-right: 25px;
-	}
 }
 
 .logo {

@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { scrollToLastError } from '../../helpers/scrollToLastError';
 import { ScrollToTopS } from '../../helpers/ScrollToTop';
 
 import { sumPrice } from '../../helpers/sumPrice';
 import { cartActions } from '../../store/cart/cartSlice';
 import { checkoutActions } from '../../store/checkout/checkoutSlice';
+
 import Confirmation from './Confirmation/Confirmation';
 import Input from './Input/Input';
 import { Validation } from './Validation/Validation';
@@ -36,7 +38,7 @@ const Checkout = () => {
 			dispatch(cartActions.reset());
 			dispatch(checkoutActions.reset());
 		} else {
-			ScrollToTopS()
+			scrollToLastError(Validation(userInfo));
 			dispatch(checkoutActions.checkoutErrors(Validation(userInfo)));
 		}
 	};

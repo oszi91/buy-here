@@ -1,0 +1,55 @@
+.productBtn {
+	margin-top: 15px;
+	font-size: 1.3rem;
+	color: $color2;
+
+	@include phone {
+		font-size: 1.5rem;
+	}
+}
+
+.loadMore {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 50px 0;
+
+	&__btn {
+		border-radius: $border-radius;
+		padding: 20px 25px;
+		background-color: $color3;
+		font-weight: 700;
+		font-size: 1.2rem;
+		color: $color2;
+	}
+}
+
+.addToFav {
+	margin-top: 7px;
+	font-size: 1.5rem;
+	color: $color3;
+}
+
+.navBtn {
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+	font-size: 2rem;
+
+	@include phone {
+		top: 104%;
+		font-size: 1.5rem;
+		margin-top: 25px;
+		box-shadow: $box-shadow-cart;
+		padding: 10px;
+		border-radius: $border-radius;
+	}
+
+	&__next {
+		right: 2%;
+	}
+
+	&__prev {
+		left: 2%;
+	}
+}

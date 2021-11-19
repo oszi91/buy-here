@@ -4,17 +4,17 @@
 @import 'settings/fonts';
 @import 'settings/base';
 
+@import '../components/Buttons//buttons';
+@import '../components/Cart/cart';
+
+@import '../components/Cart/subcomponents/OneCart/oneCart';
+@import '../components/Checkout/checkout';
+
+@import '../components/Footer/footer';
+@import '../components/Header/header';
+
 @import '../components/Loading/loading';
 @import '../components/Messages/messages';
 
-@import '../components/Header/header';
-@import '../components/Checkout/checkout';
-
 @import '../components/Products/products';
 @import '../components/Products/subcomponents/oneProduct';
-@import '../components/Products/subcomponents/CheckAlsoProducts/checkAlsoProducts';
-
-@import '../components/Cart/cart';
-@import '../components/Cart/subcomponents/OneCart/oneCart';
-
-@import '../components/Footer/footer';
