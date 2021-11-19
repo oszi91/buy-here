@@ -16,6 +16,8 @@
 		@include phone{
 			min-width: none;
 			max-width: none;
+			max-height: 100px;
+			max-width: 100px;
 		}
 		&__img {
 			height: auto;
